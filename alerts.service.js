@@ -1,3 +1,4 @@
+// crypto-telegram-bot\alerts.service.js
 const alerts = [];
 
 function addAlert(chatId, symbol, price) {

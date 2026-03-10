@@ -1,3 +1,4 @@
+//crypto-telegram-bot\bot.js
 require("dotenv").config();
 
 const TelegramBot = require("node-telegram-bot-api");
@@ -16,17 +17,21 @@ bot.onText(/\/start/, (msg) => {
 
 Comandos disponibles:
 
-/precio btc
-/precio eth
-/alert btc 65000
+/precio_btc
+
+/precio_eth
+
+/alert_btc 65000
+
 /misalertas
+
 /top`
   );
 });
 
 
 // PRECIO GENERICO
-bot.onText(/\/precio (.+)/, async (msg, match) => {
+bot.onText(/\/precio_(.+)/, async (msg, match) => {
 
   const chatId = msg.chat.id;
   const symbol = match[1].toUpperCase();
@@ -61,7 +66,7 @@ bot.onText(/\/eth/, async (msg) => {
 
 
 // CREAR ALERTA
-bot.onText(/\/alert (.+)/, async (msg, match) => {
+bot.onText(/\/alert_(.+)/, async (msg, match) => {
 
   const chatId = msg.chat.id;
 

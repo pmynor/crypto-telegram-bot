@@ -1,5 +1,5 @@
+//crypto-telegram-bot\price.service.js
 const axios = require("axios");
-
 async function getPrice(symbol) {
   try {
     const response = await axios.get(
