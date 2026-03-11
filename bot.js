@@ -126,12 +126,17 @@ setInterval(async () => {
   }
 }, 60000);
 
-// Simple Health Check Server
-const http = require("http");
-const PORT = process.env.PORT || 3000;
-http.createServer((req, res) => {
-  res.writeHead(200);
-  res.end("Crypto bot is alive");
-}).listen(PORT, () => {
-  console.log("Server running on port", PORT);
+const express = require('express');
+const app = express();
+
+// Render define la variable PORT automáticamente
+const port = process.env.PORT || 10000; 
+
+app.get('/', (req, res) => {
+  res.send('Bot is running!');
+});
+
+// IMPORTANTE: Escuchar en '0.0.0.0'
+app.listen(port, '0.0.0.0', () => {
+  console.log(`Server running on port ${port}`);
 });
